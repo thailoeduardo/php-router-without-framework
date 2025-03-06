@@ -13,6 +13,5 @@ $router->get('/about', [HomeController::class, 'about']);
 $router->get('/users', [UserController::class, 'index']);
 $router->get('/user/{id}', [UserController::class, 'show']);
 
-
 // Handle the current request
 echo $router->resolve();

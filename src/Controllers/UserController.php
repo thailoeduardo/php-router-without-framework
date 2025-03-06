@@ -8,9 +8,13 @@ class UserController
 			return "Welcome to page User!";
 	}
 
-	public function show(array $params): string
+	public function show($id): string
 	{
-		$userId = $params['id'];
-		return "Showing user profile for ID: {$userId}";
+		$userId = filter_var($id, FILTER_VALIDATE_INT);
+    if ($userId === false) {
+			return "Invalid user ID";
+    }
+
+		return "Showing user profile for ID: {$id}";
 	}
 }
